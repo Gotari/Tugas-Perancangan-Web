@@ -190,3 +190,47 @@ footer {
   color: #777;
   margin-top: 24px;
 }
+
+.berita-bawah {
+  display: none;
+}
+ 
+ @media screen and (max-width: 420px) {
+  .berita-atas{
+    display: none;
+  }
+  .berita-bawah{
+    display: grid;
+  }
+  aside .iklan img{
+  display: block;
+  width: 100%;
+  max-width: 200px;
+  margin: 16px auto;
+  }
+  .wrap{
+    display: grid;
+    gap: 12px;
+  }
+  .navigation{
+    display: grid;
+  }
+    img{
+    width: 10px;
+  }
+}
+
+@media screen and (max-width: 900px){
+  .wrap{
+    display: block;
+  }
+    .berita-atas{
+    display: none;
+  }
+  .berita-bawah{
+    display: grid;
+  }
+  img{
+    width: 300px;
+  }
+}
