@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign In - Zero Hunger</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(to right, #f0f4f8, #e0f7fa);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .signin-card {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      display: block;
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+      color: #34495e;
+      font-weight: 500;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    button {
+      margin-top: 1.5rem;
+      width: 100%;
+      padding: 0.75rem;
+      background-color: orange;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: orange;
+    }
+
+    .signup-text {
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .signup-text a {
+      color: #2980b9;
+      text-decoration: none;
+    }
+
+    .signup-text a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="signin-card">
+    <h2>Masuk ke Zero Hunger</h2>
+    <form id="signinForm">
+      <label for="email">Email</label>
+      <input type="email" id="email" required value="user@example.com" />
+
+      <label for="password">Kata Sandi</label>
+      <input type="password" id="password" required value="password123" />
+
+      <button type="submit">Sign In</button>
+      <p class="signup-text">Belum punya akun? <a href="#">Daftar</a></p>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("signinForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value;
+
+      const validEmail = "user@example.com";
+      const validPassword = "password123";
+
+      if (email === validEmail && password === validPassword) {
+        localStorage.setItem("isLoggedIn", "true");
+        window.location.href = "final2.html";
+      } else {
+        alert("Email atau kata sandi salah!");
+      }
+    });
+  </script>
+</body>
+</html>
